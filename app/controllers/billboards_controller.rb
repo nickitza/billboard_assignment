@@ -39,7 +39,7 @@ class BillboardsController < ApplicationController
 
   private
   def set_billboard
-    @billboard = Billboard.find(params[id])
+    @billboard = Billboard.find(params[:id])
   end
 
   def billboard_params
