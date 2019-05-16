@@ -1,5 +1,5 @@
 class BillboardsController < ApplicationController
-  before_action :set_billboard only: [:show, :edit, :update, :destroy]
+  before_action :set_billboard, only: [:show, :edit, :update, :destroy]
 
   def index
     @billboards = Billboard.all
