@@ -1,2 +1,4 @@
-<h1>Songs#edit</h1>
-<p>Find me in app/views/songs/edit.html.erb</p>
+<h1><%=@song.name%></h1>
+<hr>
+<h4>Artist: <%= Artist.find(song.artist_id).name %>
+<br>

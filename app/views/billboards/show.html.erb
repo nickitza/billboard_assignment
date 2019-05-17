@@ -1,2 +1,17 @@
 <h1><%=@billboard.name%></h1>
-<p>Find me in app/views/billboards/show.html.erb</p>
+<hr>
+<%= link_to "Add Song To Billboard", new_billboard_song_path(@billboard) %>
+
+<ol>
+<%@songs.each do |song|%>
+<li><%= song.title%> - <%= Artist.find(song.artist_id).name %></li>
+<br>
+<%= link_to "Edit Song Name", edit_billboard_song_path(@billboard, song)%>
+<br>
+<%= link_to "Delete Song", billboard_song_path(@billboard, song), method: :delete %>
+<br>
+<br>
+<%end%>
+</ol>
+
+<%= link_to "Back To Billboard List", billboards_path%>
