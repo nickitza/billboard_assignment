@@ -1,6 +1,5 @@
-<h1>Billboards</h1>
+<h1 class="ui header">Billboards</h1>
 <hr>
-<h3><%= link_to "View Artists", artists_path%></h3>
 <h3><%= link_to "Add A Billboard", new_billboard_path%></h3>
 <br>
 <% @billboards.each do |billboard| %>
@@ -11,3 +10,5 @@
   <%= link_to "Delete Billboard", billboard_path(billboard), method: :delete %>
   <br>
 <%end%>
+<h4><%= link_to "View Artists", artists_path%></h4>
+
