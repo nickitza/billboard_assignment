@@ -1,2 +1,4 @@
-<h1>Artists#new</h1>
-<p>Find me in app/views/artists/new.html.erb</p>
+<h1 class="ui header">Add New Artist or Band</h1>
+<%= render "form", artist: @artist %>
+<br>
+<%= link_to "Back", artists_path%>

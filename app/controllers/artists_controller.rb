@@ -9,6 +9,17 @@ class ArtistsController < ApplicationController
     @songs = @artist.songs
   end
 
+  def edit
+  end
+
+  def update
+    if @artist.update(artist_params)
+      redirect_to artists_path
+      else
+      render :edit
+    end
+  end
+
   def new
     @artist = Artist.new()
   end
@@ -19,17 +30,6 @@ class ArtistsController < ApplicationController
       redirect_to artists_path
       else
       render :new
-    end
-  end
-
-  def edit
-  end
-
-  def update
-    if @artist.update(artist_params)
-      redirect_to artists_path
-      else
-      render :edit
     end
   end
 

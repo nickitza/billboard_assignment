@@ -1,2 +1,23 @@
-<h1>Artists#show</h1>
-<p>Find me in app/views/artists/show.html.erb</p>
+<h1 class="ui header">Showing <%=@artist.name%></h1>
+<hr>
+<%= link_to "Add Song To Artist", new_artist_song_path(@artist) %>
+
+<ol>
+<%@artist.songs.each do |song|%>
+<li><%= song.title %></li>
+<br>
+
+<div class = "extra content">
+
+<%= link_to "Edit Song Name", edit_artist_song_path(@artist, song) %>
+<br>
+<%= link_to "Delete Song", artist_song_path(@artist, song), method: :delete %>
+
+</div>
+
+<br>
+<br>
+<%end%>
+</ol>
+
+<%= link_to "Back To Artist List", artists_path%>

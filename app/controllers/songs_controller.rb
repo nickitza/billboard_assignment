@@ -4,7 +4,7 @@ class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
   def index
-    @songs = @billboard.songs
+    # @songs = @billboard.songs
   end
 
   def show
@@ -16,7 +16,7 @@ class SongsController < ApplicationController
 
   def update
     if @song.update(song_params)
-      redirect_to billboard_song_path(@billboard.id, @song.id)
+      redirect_to billboard_path(@billboard)
     else
       render partial: "form"
     end
@@ -57,6 +57,6 @@ class SongsController < ApplicationController
 
     def set_billboard
     @billboard = Billboard.find(params[:billboard_id])
-  end
+    end
 
 end
