@@ -1,5 +1,10 @@
 <h1>Artists#index</h1>
 <hr>
+<ul>
 <% @artists.each do |artist| %>
-<%= artist.name %>
+<li><%= artist.name %></li>
+<%= link_to "View Songs", artist_songs_path(artist)%>
 <%end%>
+</ul>
+
+<%= link_to "Back To Billboards", billboards_path%>
