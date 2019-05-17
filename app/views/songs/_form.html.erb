@@ -1,5 +1,9 @@
-<%= form_for [@billboard, @song] do |f| %>
-  <%= f.label :title%>
-  <%= f.text_field :title %>
-  <%= f.submit %>
-<%end%>
+<h1><%= @song.id ? 'Edit Song' : 'Create Song' %></h1>
+<hr />
+<%= form_with(model: [@billboard, @song], local: true, class: "ui form") do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, required: true, autofocus: true %>
+  <br />
+  <br />
+  <%= f.submit nil, class: "ui button" %>
+<% end %>
