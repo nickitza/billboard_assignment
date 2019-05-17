@@ -1,4 +1,4 @@
-<h1><%=@billboard.name%></h1>
+<h1 class="ui header"><%=@billboard.name%></h1>
 <hr>
 <%= link_to "Add Song To Billboard", new_billboard_song_path(@billboard) %>
 
@@ -6,9 +6,11 @@
 <%@songs.each do |song|%>
 <li><%= song.title%> - <%= Artist.find(song.artist_id).name %></li>
 <br>
-<%= link_to "Edit Song Name", edit_billboard_song_path(@billboard, song)%>
+<div class = "extra content">
+<%= link_to "Edit Song Name", edit_billboard_song_path(@billboard, song) %>
 <br>
 <%= link_to "Delete Song", billboard_song_path(@billboard, song), method: :delete %>
+</div>
 <br>
 <br>
 <%end%>

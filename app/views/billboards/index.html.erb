@@ -5,7 +5,7 @@
 <% @billboards.each do |billboard| %>
   <%= billboard.name %>
   <br>
-  <%= link_to "View Billboard", billboard_path(billboard)%> | 
+  <%= link_to "View Songs on Billboard", billboard_path(billboard)%> | 
   <%= link_to "Edit Billboard Name", edit_billboard_path(billboard)%> |
   <%= link_to "Delete Billboard", billboard_path(billboard), method: :delete %>
   <br>
